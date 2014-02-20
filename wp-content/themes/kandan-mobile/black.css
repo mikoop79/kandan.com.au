@@ -1,0 +1,97 @@
+ CSS BLACK PAGE STYLES for http://www.kandan.com.au by - NK 130430 */
+
+@charset "utf-8";
+
+/* CSS BEGIN */
+
+
+html{
+	background-color: #111;
+}
+
+body{	
+	color: #fff;
+	background-color: #111;
+	background:  #111;
+	background: url('images/kd-background-ptn-black.png');
+}
+
+#page-loader{
+	background-color: #111;
+}
+
+#wrapper{
+	background-color: #111;
+}
+
+#primary_nav li a,
+#people-listing_page .right-column h2{
+	color: #fff;
+}
+
+#people-listing_page .right-column h2{
+	font-family: 'helv-bold';
+   	font-size: 18px;
+   	font-weight: normal !important;
+  	letter-spacing: -0.2px;
+  	line-height: 22px;
+}
+
+#primary_nav li a,
+#primary_nav li a:hover,
+#primary_nav li a:after{
+	background: transparent!important;
+}
+
+/* CHANGE LOGOS */
+
+#logo #black-logo,
+#footer-black-logo{
+	display: block;
+}
+
+#logo #white-logo,
+#footer-white-logo{
+	display: none;
+}
+
+
+/* HIDE FROM THE SCREEN */
+
+#social-media-icons a{
+	display: none;
+}
+
+/* HEADER COLOUR */
+
+#header{
+	background-color: #111;
+}
+
+/* RIGHT COLUMN */
+
+.right-column p{
+	color: #999;
+}
+
+/* FOOTER */
+
+#footer p,
+p, li, a, td{
+	color: #999;
+	/* -webkit-font-smoothing: antialiased  !important;
+	text-rendering: optimizeLegibility !important; */
+}
+
+#footer h4{
+	color: #CCCCCC;
+}
+
+/* KEY LINES */
+
+#header-line,
+#footer .content-section h2,
+.the-line{
+	border-bottom: 1px solid #888;
+}
+/* END CSS */
