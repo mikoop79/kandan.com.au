@@ -62,6 +62,9 @@ body{
     	background: url('images/kd-background-ptn.png');
 
 }
+.min-h-355{
+	min-height: 355px;
+}
 
 #page-loader{
 	position: absolute;
@@ -909,6 +912,79 @@ body{
 
 /* WHAT WE DO */
 
+#rollover-content{
+	display: none;
+	z-index: 15000;
+	position: relative;
+	min-height: 450px;
+	margin-bottom: 15px;
+	float: left !important;
+	background-color: #ffffff;
+	width: 944px;
+}
+
+#process-content{
+	float: left;
+	width: 540px;
+	margin-bottom: 40px;
+	padding-right: 30px;
+	font-size: 15px;
+	line-height: 20px;
+	color: #808080;
+	color: #191919;
+	color: #4F4F4F;
+	font-weight: lighter;
+}
+
+#process-content h2{
+	margin-top: 0px;
+	margin-bottom: 35px;
+	color:#248ABA;
+	border-top:1px solid #B2B2B2;
+	padding-top: 25px;
+	font-size: 24px;
+	line-height: 30px;
+	
+}
+
+#process-content h1.title{
+	color:#000;
+	margin-bottom: 15px;
+	font-size: 25px;
+	border-top: none ;
+	font-weight: normal;
+	font-family: 'helv-bold';
+}
+
+#process-content h2:nth-child(2){
+	margin-top: 0px;
+	border-top: none;
+}
+
+#process-content h3{
+	margin-top: 32px;
+	margin-bottom: 0;
+	border-bottom: none;
+	line-height: 7px;
+}
+
+#process-content p{
+	margin-bottom: 44px;
+}
+
+#rollover-content #process-chart{
+	float: right;
+	margin-left: 10px;
+}
+
+#process-chart .close-btn{
+
+}
+
+#process-thumb{
+	cursor: pointer !important;
+}
+
 #what-we-do_page .related-work,
 #what-we-do_page .related-work-copy{
 	clear: both;
@@ -931,23 +1007,6 @@ body{
 #what-we-do_page .related-work li a img{
 	margin-bottom: 10px;
 }
-
-/*#process-content, #process-chart{
-	display: none;
-	z-index: 15000;
-	position: absolute;
-	min-height: 450px;
-	float: left !important;
-}
-
-#content #process-chart{
-	float: right;
-	margin-left: 580px;
-}
-
-#process-thumb{
-	cursor: default;
-}*/
 
 /* THE WORK PAGE */
 
@@ -1491,7 +1550,7 @@ blog_page .post-wrapper p{
 	background-image: url('images/hover-arrows.png');
 	background-position: -69px 0px;
 	z-index: 100000;
-
+	cursor: pointer;
 	display: none;
 }
 
@@ -1766,6 +1825,7 @@ h3{
 
 #who-we-are_page h4{
 	margin-bottom: 0px;
+	margin-top: 25px;
 	color: #000;
 	font-size: 16px;
 	font-weight: bold;
@@ -1774,7 +1834,6 @@ h3{
 	letter-spacing: -0.2px;
 	line-height: 21px;
 }
-
 
 #who-we-are_page h4{
 	font-size: 16px;
