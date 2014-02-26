@@ -769,7 +769,7 @@ add_action('save_post', 'save_add_the_client_metaboxes', 1, 2); // save the cust
 // SHOWS ALL THUMBNAILS FOR WHAT WE DO PAGE 
 //
 //
-function show_all_thumbs() {
+function show_all_thumbs($_include_ids) {
     global $post;
     $post = get_post($post);
 
@@ -778,16 +778,17 @@ $images =& get_children( 'post_type=attachment&post_mime_type=image&output=ARRAY
 if($images){
 	$count = 0;
 foreach( $images as $imageID => $imagePost ){
-if ($count > 0 ){ 
+if ($count > 0 && $count < 2){ 
 	unset($the_b_img);
 	$the_b_img = wp_get_attachment_image($imageID, 'thumbnail', false);
-	$thumblist .= '<a class="'.$count . '"" href="'.get_attachment_link($imageID).'">'.$the_b_img.'</a>';
+	$thumblist .= '<a data-heading1="'. get_post_meta($post->ID, '_h1', true) .'"  data-heading2="'. get_post_meta($post->ID, '_h2', true) .'" class="'.$count . '"" href="'.get_attachment_link($imageID).'">'.$the_b_img.'</a>';
 	}
 $count ++;
 	}
 }
 return $thumblist;
 }
+
 //
 //
 //
