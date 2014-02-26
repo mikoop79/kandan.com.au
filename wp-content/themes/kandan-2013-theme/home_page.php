@@ -55,7 +55,7 @@ Template Name: Home
 				<a class="post-title" href="<?php the_permalink() ?>"><?php the_title() ?></a>
 				<div class="post-date"><?php the_date('M d'); ?></div>
 				<div class="post-excerpt post<?php echo $count; ?>">
-					<?php echo get_excerpt(155)  ?>
+					<?php echo get_excerpt(100)  ?>
 				</div>
 			</div>
 		<?php 
@@ -106,7 +106,7 @@ Template Name: Home
 			foreach( $myposts as $post ) :	setup_postdata($post); ?>
 			
 			<li class="<?php if($i == 3) echo "last";  ?>" >
-				
+				<a href="<?php the_permalink() ?>">
 					<div class="hover-arrows"></div>
 					<div class="hover-arrows-hover"></div>
 					<?php if (class_exists('MultiPostThumbnails')) : MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'the_work2'); endif; ?>
@@ -185,7 +185,7 @@ Template Name: Home
 				'medibank_implementation' => '1037',
 				'shoreditch_heist' => '415',
 				'mercedes_truck_show' => '420',
-				'anz_travel_pack' => '403',
+				'bmw_edm' => '1153',
 				'infiniti_motor_show' => '399',
 				'mercedes_dm' => '418'
 			);
@@ -196,7 +196,7 @@ Template Name: Home
 			foreach( $myposts as $post ) :	setup_postdata($post); ?>
 			
 			<li class="<?php if($i == 3) echo "last";  ?>" >
-				
+				<a href="<?php the_permalink() ?>">
 					<div class="hover-arrows"></div>
 					<div class="hover-arrows-hover"></div>
 					<?php if (class_exists('MultiPostThumbnails')) : MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'the_work2'); endif; ?>
@@ -363,7 +363,7 @@ $(window).scroll(function () {
 /* CONTROLS WORK SLIDER */
 $(document).ready(function(){
 	$('#landing-the_work-controller .second').click(function(){
-			$('#landing-the_work').animate({'margin-left':'-960px'});
+			$('#landing-the_work').animate({'margin-left':'-964px'});
 			$(this).addClass('active');
 			$(this).removeClass('ready');
 			$(this).siblings().addClass('ready');
