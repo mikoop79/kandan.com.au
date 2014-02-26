@@ -938,18 +938,22 @@ body{
 
 #process-content h2{
 	margin-top: 0px;
-	margin-bottom: 35px;
+	margin-bottom: 23px;
 	color:#248ABA;
 	border-top:1px solid #B2B2B2;
-	padding-top: 25px;
-	font-size: 24px;
-	line-height: 30px;
+	padding-top: 30px;
+	font-size: 21px;
+	line-height: 33px;
 	
+}
+#process-chart{
+	height: 0;
+	overflow: none;
 }
 
 #process-content h1.title{
 	color:#000;
-	margin-bottom: 15px;
+	margin-bottom: 35px;
 	font-size: 25px;
 	border-top: none ;
 	font-weight: normal;
@@ -959,10 +963,11 @@ body{
 #process-content h2:nth-child(2){
 	margin-top: 0px;
 	border-top: none;
+	padding-top: 0;
 }
 
 #process-content h3{
-	margin-top: 32px;
+	margin-top: 0;
 	margin-bottom: 0;
 	border-bottom: none;
 	line-height: 7px;
@@ -992,7 +997,7 @@ body{
 }
 
 #what-we-do_page .related-work li{
-	width: 360px;
+	width: 78px;
 }
 
 #what-we-do_page .related-work li a.0{

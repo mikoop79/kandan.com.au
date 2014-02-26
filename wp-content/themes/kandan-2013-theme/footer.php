@@ -63,16 +63,14 @@
 		Victoria Australia 3207<br /><br />
 		Phone 03 9676 7100</p>
 		<div id="social-media-icons" class="">
-			<a href="https://twitter.com/kandanmedia" class="twitter"></a>
-			<a href="http://instagram.com/kandanmedia#" class="instagram"></a>
-			<a href="http://au.linkedin.com/company/kandan?trk=ppro_cprof" class="linkedin"></a>
-			<a href="https://www.facebook.com/kandanmedia" class="facebook"></a>
+			<a href="https://twitter.com/kandanmedia" class="twitter" target="_blank"></a>
+			<a href="http://instagram.com/kandanmedia#" class="instagram" target="_blank"></a>
+			<a href="http://au.linkedin.com/company/kandan?trk=ppro_cprof" class="linkedin" target="_blank"></a>
+			<a href="https://www.facebook.com/kandanmedia" class="facebook" target="_blank"></a>
 		</div> 	
 	</div>
 
 </div>
-
-
 
 
 </div> <!-- WRAPPER -->

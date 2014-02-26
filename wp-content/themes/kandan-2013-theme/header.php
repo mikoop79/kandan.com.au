@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8"> 
-<title><?php echo get_post_meta($post->ID, '_page_title', true) ?></title>
+<title><?php echo get_post_meta($post->ID, '_page_title', true) ?> | Creative Design Studio | South Melbourne</title>
 
 <meta name="keywords" content="<?php echo get_post_meta($post->ID, "_meta_tags", true) ?>" />
 <meta name="description" content="<?php echo get_post_meta($post->ID, "_meta_des", true) ?>" />
@@ -44,7 +44,7 @@
 		</div>  
 
 		<div id="primary_nav">
-			<?php wp_nav_menu('exclude=186,188,1218'); ?>
+			<?php wp_nav_menu('exclude=186,188,1218,1254'); ?>
 		</div>	
         	<div id="header-line"></div>
     	</div>

@@ -10,7 +10,7 @@ Template Name: Who We Are
 
 	<div id="content">
 
-		<div class="left-column">		
+		<div class="left-column min-h-355">		
 
 			<?php the_post(); ?>  
 			<?php the_content(); ?>  
