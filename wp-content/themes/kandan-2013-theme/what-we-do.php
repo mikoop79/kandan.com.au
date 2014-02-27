@@ -6,13 +6,12 @@ Template Name: What We Do
 
 <?php get_header(); ?>
 
-<?php	
+			<?php	
 					/* GET PROCESS ROLLOVER PAGE CONTENT */
-					$post_id = 1254;
+					$post_id = 1218;
 					$process = get_post($post_id);
 					$title = $process->post_title;
 					$content = $process->post_content;
-					
 			?>
 
 			<style>
@@ -71,24 +70,25 @@ Template Name: What We Do
 			
 				<?php
 					global $post;
-					// 1118 = Drapac for idea Generation
-					$args = array( 'posts_per_page' => 4, 'post_type' =>'the_work', 'include' => '1118');
+					//idea Generation
+					$include_ids = array(
+										'Infiniti_Cirq'=>398,
+										'WHK' => 424,
+										'Brainwave' => 423,
+										'Shoreditch_Cut'=>413,
+										);
+					
+
+					$args = array( 'posts_per_page' => 4, 'post_type' =>'the_work', 'include' => $include_ids);
 					$myposts = get_posts( $args );
 					$count = 0;
 					foreach( $myposts as $post ) :	setup_postdata($post); ?>	
 						<li>
-							<a href="<?php the_permalink() ?>" class="block-link">
-
-							<?php echo show_all_thumbs(); ?>
-							<div class="people-name">
-								<?php //echo get_post_meta($post->ID, '_h1', true) ?>
-							</div>
-							<div class="people-title">
-								<?php //echo get_post_meta($post->ID, '_h2', true) ?>
-							</div>
-							</a>
+							<?php echo show_all_thumbs($post->ID); ?>
 						</li>
 				<?php endforeach; ?>
+				<div class="client-name"></div>
+				<div class="client-title"></div>
 		
 			</ul>	
 		</div>
@@ -100,26 +100,25 @@ Template Name: What We Do
 		<ul class="related-work-thumbs">
 			<?php
 			global $post;
-			// 1054 = Telstra for Implementation
-			$args = array( 'posts_per_page' => 4, 'post_type' =>'the_work', 'include' => '415');
+			//Implementation
+			$include_ids = array(
+				'ANZ_Rappin'=>405,
+				'Infinit_NewZealand' => 401,
+				'AustBrokers' => 412,
+				'AllSaints'=>416,
+				);
+			$args = array( 'posts_per_page' => 4, 'post_type' =>'the_work', 'include' => $include_ids);
 			$myposts = get_posts( $args );
 			
 				foreach( $myposts as $post ) :	setup_postdata($post); ?>			 
 
 					<li>
-						<a href="<?php the_permalink() ?>" class="block-link">
-
-						<?php echo show_all_thumbs(); ?>
-						<div class="people-name">
-							<?php //echo get_post_meta($post->ID, '_h1', true) ?>
-						</div>
-						<div class="people-title">
-							<?php //echo get_post_meta($post->ID, '_h2', true) ?>
-						</div>
-						</a>
+						<?php echo show_all_thumbs($post->ID); ?>
 					</li>
 				
-			<?php endforeach; ?>	
+			<?php endforeach; ?>
+				<div class="client-name"></div>
+				<div class="client-title"></div>
 		</ul>	
 		</div>
 
@@ -130,26 +129,27 @@ Template Name: What We Do
 		<ul class="related-work-thumbs">
 		<?php
 			global $post;
-			// 425 = Pickawall for Branding
-			$args = array( 'posts_per_page' => 4, 'post_type' =>'the_work', 'include' => '425');
+			//Branding
+			$include_ids = array(
+				'magnifymedia'=>426,
+				'CheekyChinos' => 394,
+				'SwissWoodcraft' => 945,
+				'SelectAV'=>1022,
+				);
+			$args = array( 'posts_per_page' => 4, 'post_type' =>'the_work', 'include' => $include_ids);
 			$myposts = get_posts( $args );
 			
 			foreach( $myposts as $post ) :	setup_postdata($post); ?>			 
 
 			<li>
-				<a href="<?php the_permalink() ?>" class="block-link">
-
-				<?php echo show_all_thumbs(); ?>
-				<div class="people-name">
-					<?php //echo get_post_meta($post->ID, '_h1', true) ?>
-				</div>
-				<div class="people-title">
-					<?php //echo get_post_meta($post->ID, '_h2', true) ?>
-				</div>
-				</a>
+				
+				<?php echo show_all_thumbs($post->ID); ?>
+				
 			</li>
 			
-		<?php endforeach; ?>	
+		<?php endforeach; ?>
+			<div class="client-name"></div>
+			<div class="client-title"></div>
 		</ul>	
 		</div>
 
@@ -164,27 +164,24 @@ Template Name: What We Do
 		
 		<?php
 			global $post;
-			// 402 = Infiniti for Activation
-			$args = array( 'posts_per_page' => 4, 'post_type' =>'the_work', 'include' => '402,410,402,402');
-			$myposts = get_posts( $args );
-			
+			//Activation
+			$include_ids = array(
+				'Drapac'=>1118,
+				'Kinetic_Activation' => 1062,
+				'Infiniti_GP' => 402,
+				'Freightliner'=>420
+				);
+			$args = array( 'posts_per_page' => 4, 'post_type' =>'the_work', 'include' => $include_ids);
+			$myposts = get_posts( $args );	
 			foreach( $myposts as $post ) :	setup_postdata($post); ?>			 
 
 			<li>
-				 <a href="<?php the_permalink() ?>" class="block-link">
-
-				<?php echo show_all_thumbs(); ?>
-				<div class="people-name">
-					<?php //echo get_post_meta($post->ID, '_h1', true) ?>
-				</div>
-				<div class="people-title">
-					<?php //echo get_post_meta($post->ID, '_h2', true) ?>
-				</div>
-				</a>
+				<?php echo show_all_thumbs($post->ID); ?>
 			</li>
 			
 		<?php endforeach; ?>	
-			
+				<div class="client-name"></div>
+				<div class="client-title"></div>
 		</ul>	
 		</div>
 
@@ -198,15 +195,12 @@ Template Name: What We Do
 		
 		<?php
 			global $post;
-			//410  = Medibank IPAD APP for Digital 
+			//Digital 
 			$include_ids = array(
 				'pickawall'=>425,
 				'medibankpaperjam' => 1121,
 				'mtbow' => 945,
 				'feelinghealthy'=>1011,
-
-
-
 				);
 			$args = array( 'posts_per_page' => 1, 'post_type' =>'the_work', 'include' => $include_ids);
 			$myposts = get_posts( $args );
@@ -214,19 +208,19 @@ Template Name: What We Do
 			foreach( $myposts as $post ) :	setup_postdata($post); ?>			 
 
 			<li>
-				 <a href="<?php the_permalink() ?>" class="block-link">
+				 
 
-				<?php echo show_all_thumbs($include_ids); ?>
+				<?php echo show_all_thumbs($post->ID); ?>
 				
 				</a>
 			</li>
 			
 		<?php endforeach; ?>
-		<div class="people-name">
-					<?php echo get_post_meta($post->ID, '_h1', true) ?>
+				<div class="client-name">
+					
 				</div>
-				<div class="people-title">
-					<?php echo get_post_meta($post->ID, '_h2', true) ?>
+				<div class="client-title">
+					
 				</div>
 			
 		</ul>	
@@ -244,29 +238,33 @@ Template Name: What We Do
 		
 		<?php
 			global $post;
-			//410  = Fairtrade Facebook for Social Media 
-			$args = array( 'posts_per_page' => 1, 'post_type' =>'the_work', 'include' => '998');
+			// Social Media 
+			$Social_include_ids = array(
+				'FairtradeApp'=> 998,
+				'FarmersUnion' => 1006,
+				'KandanKrisKringle_App' => 422,
+				'Cheeky' =>394
+				);
+			
+			$args = array( 'posts_per_page' => 1, 'post_type' =>'the_work', 'include' => $Social_include_ids);
 			$myposts = get_posts( $args );
 			
 			foreach( $myposts as $post ) :	setup_postdata($post); ?>			 
 
 			<li>
+				 
 
-				 <a href="<?php the_permalink() ?>" class="block-link">
+				 <?php echo show_all_thumbs($post->ID); ?>		
 
-				<?php echo show_all_thumbs(); ?>		
-
-				<div class="people-name">
-					<?php //echo get_post_meta($post->ID, '_h1', true) ?>
-				</div>
-				<div class="people-title">
-					<?php //echo get_post_meta($post->ID, '_h2', true) ?>
-				</div>
-				</a>
+				
+				
 			</li>
 			
-		<?php endforeach; ?>	
-
+		<?php 
+		
+		endforeach; ?>
+		<div class="client-name"></div>
+				<div class="client-title"></div>
 			
 		</ul>	
 		</div>
@@ -293,7 +291,7 @@ $(document).ready(function(){
 	}
 
 	$("#process-thumb").click( function(){
-		console.log("process clicked");
+		//console.log("process clicked");
 		$("#rollover-content").fadeIn('slow');
 		$(".related-work, .related-work-thumbs, .first-page, #process-thumb").fadeOut('slow');
 		/* SHOWS THE BACK BUTTON */
@@ -310,10 +308,40 @@ $(document).ready(function(){
 
 	});
 
-	$('#the_work-close-button').click( function(e){
+	$('#the_work-close-button').click(function(e){
 		e.preventDefault();
 	});
 
+
+
+	// small thumbs for rollover
+	$(".related-work-thumbs li a").hover(function(){
+		
+		var heading1 = $(this).data('heading1');
+		var heading2 = $(this).data('heading2');
+
+		$(this).parent().parent().children(".client-name").text(heading1);
+		$(this).parent().parent().children(".client-title").text(heading2);
+		$(this).css({"background-color":"#FFF"});
+		$(this).children("img").animate({"opacity" : "1"}, 'fast');
+
+
+	}, function(){
+		$(this).css("background,#000");
+		$(this).children("img").animate({"opacity": "0.8"}, 'fast');
+		$(this).parent().parent().children(".client-name, .client-title").text("");
+		
+	})
+
+	// get related thumbs
+
+	//get data text for each
+	//add to div for each
+	// fade out old 
+	//fadeIn effect on ROLLOVER
+	// delay()
+	//show tex fadein text
+	//hover out fade old out
 
 
 
@@ -328,6 +356,8 @@ function showBanner(_Selector){
 	var pauseTime = pauseTime;
 	$(""+Selector+"").animate({"height":"310px"},animateTime).delay(pauseTime).animate({"height":"685px"}, animateTime).delay(pauseTime).animate({"height":"1040px"},animateTime);
 }
+
+
 
 </script>
 

@@ -591,8 +591,37 @@ body{
 	text-decoration: none;
 }
 
+#what-we-do_page .client-name{
+	font-size: 14px;
+	font-family: 'helv-bold';
+	font-weight: normal !important;
+	color: #4F4F4F;
+	color: #000;
+}
+
+#what-we-do_page .client-title{
+	clear: both;
+	font-size: 12px;
+	color: #4F4F4F;
+	text-decoration: none;
+	letter-spacing: 0;
+}
+
+
 #what-we-do_page .related-work-thumbs li .people-name{
 	margin-top: -4px;
+}
+
+#what-we-do_page .related-work-thumbs li a{
+	background-color: #000;
+	margin-bottom: 10px;
+}
+#what-we-do_page .related-work-thumbs li a:hover{
+	background-color: #FFF;
+}
+
+#what-we-do_page .related-work-thumbs li a img{
+	opacity: 0.8;
 }
 
 #landing_page .people-culture li .people-title,
@@ -997,7 +1026,7 @@ body{
 }
 
 #what-we-do_page .related-work li{
-	width: 78px;
+	width:78px;
 }
 
 #what-we-do_page .related-work li a.0{
@@ -1007,6 +1036,9 @@ body{
 
 #what-we-do_page .related-work li a{
 	margin-right: 10px;
+	display: block;
+	height: 56px;
+	width: 80px;
 }
 
 #what-we-do_page .related-work li a img{
@@ -1197,6 +1229,7 @@ body{
 }
 
 #the_work_page .wp-caption{
+	clear: both;
 	margin-bottom: 30px;
 }
 

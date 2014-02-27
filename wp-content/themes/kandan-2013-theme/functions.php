@@ -577,14 +577,13 @@ function my_custom_post_the_people() {
 	register_post_type( 'the_people', $args );	
 }
 add_action( 'init', 'my_custom_post_the_people' );
-?>
-<?php
-//
-//
-//
-// CUSTOM META BOX FOR THE PEOPLE
-//
-// ADD IT!
+
+		//
+		//
+		//
+		// CUSTOM META BOX FOR THE PEOPLE
+		//
+		// ADD IT!
 add_action( 'admin_init', 'add_the_people_metaboxes' );
 
 function add_the_people_metaboxes() {
@@ -769,24 +768,22 @@ add_action('save_post', 'save_add_the_client_metaboxes', 1, 2); // save the cust
 // SHOWS ALL THUMBNAILS FOR WHAT WE DO PAGE 
 //
 //
-function show_all_thumbs($_include_ids) {
+function show_all_thumbs($post_id) {
     global $post;
-    $post = get_post($post);
-
-/* image code */
-$images =& get_children( 'post_type=attachment&post_mime_type=image&output=ARRAY_N&posts_per_page=5&orderby=menu_order&order=ASC&post_parent='.$post->ID);
-if($images){
-	$count = 0;
-foreach( $images as $imageID => $imagePost ){
-if ($count > 0 && $count < 2){ 
-	unset($the_b_img);
-	$the_b_img = wp_get_attachment_image($imageID, 'thumbnail', false);
-	$thumblist .= '<a data-heading1="'. get_post_meta($post->ID, '_h1', true) .'"  data-heading2="'. get_post_meta($post->ID, '_h2', true) .'" class="'.$count . '"" href="'.get_attachment_link($imageID).'">'.$the_b_img.'</a>';
+    $args = array( 'posts_per_page' => 1, 'post_type' =>'the_work' , 'orderby' => 'ASC', 'include' => $post_id);
+    $myposts = get_posts($args);
+    //var_dump($myposts);
+    foreach ( $myposts as $post ):	setup_postdata($post);
+		$count = 0;
+		if ($count < 1 ){ 
+				unset($the_b_img);
+				add_image_size( 'mycustomsize', 80, 70, true );
+				if (class_exists('MultiPostThumbnails')) : $the_b_img = MultiPostThumbnails::get_the_post_thumbnail(get_post_type(), 'the_work2', NULL, 'mycustomsize'); endif;			
+				$thumblist = '<a data-heading1="'. get_post_meta($post->ID, '_h1', true) .'"  data-heading2="'. get_post_meta($post->ID, '_h2', true) .'" class="'.$count . '"" href="'.get_attachment_link($imageID).'">'.$the_b_img.'</a>';
+			 	$count++;
 	}
-$count ++;
-	}
-}
-return $thumblist;
+		endforeach;
+	return $thumblist;
 }
 
 //
@@ -856,15 +853,12 @@ function the_clients($separator, $catID, $number) {
     
     $thelist = '';
     $post_count = 0;
-    foreach($categories as $category) {    // concate
+    foreach($categories as $category) {    
 
     	if ( $limit <= $number ) {
 	    	if (cat_is_ancestor_of($catID, $category)) {
 
 	    		if ($category->count < 2){
-	    			// echo '<pre>';
-	    			// print_r($category);
-	    			// echo '</pre>';
 
 	    			global $post;	
 			
@@ -873,7 +867,7 @@ function the_clients($separator, $catID, $number) {
 		
 			foreach( $myposts as $post ) :	setup_postdata($post); 
 					$thelist .= "<li class=" . $category->slug . "><a href='".get_permalink()."'> " .$category->name. "</a></li>";
-	    			//$thelist .= "<li class=" . $category->slug . "><a href='". the_permalink() ."' >" . $category->name. "</a></li>";
+	    			
 	    	endforeach;
 
 	    		} else {
@@ -885,7 +879,6 @@ function the_clients($separator, $catID, $number) {
     	}
     }
     echo $thelist;
-    //var_dump($thelist);
 }
 
 /*
