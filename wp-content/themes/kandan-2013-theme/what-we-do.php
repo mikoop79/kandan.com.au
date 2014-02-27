@@ -8,20 +8,18 @@ Template Name: What We Do
 
 			<?php	
 					/* GET PROCESS ROLLOVER PAGE CONTENT */
-					$post_id = 1218;
+					$post_id = 1254;
 					$process = get_post($post_id);
 					$title = $process->post_title;
 					$content = $process->post_content;
 			?>
 
-			<style>
+			<style type="text/css">
 	#process-chart{
 		background: url('<?php echo $url = wp_get_attachment_url( get_post_thumbnail_id($post_id) ); ?>');
 		height: 0;
 		width: 360px
-}
-
-
+	}
 
 </style>
 
@@ -72,10 +70,10 @@ Template Name: What We Do
 					global $post;
 					//idea Generation
 					$include_ids = array(
+										'Drapac'=>1118,
 										'Infiniti_Cirq'=>398,
-										'WHK' => 424,
-										'Brainwave' => 423,
-										'Shoreditch_Cut'=>413,
+										'Mercedes_benz_dm' => 418,
+										'Shoreditch_Cut'=>413
 										);
 					
 
@@ -100,12 +98,12 @@ Template Name: What We Do
 		<ul class="related-work-thumbs">
 			<?php
 			global $post;
-			//Implementation
+			//Activation
 			$include_ids = array(
-				'ANZ_Rappin'=>405,
-				'Infinit_NewZealand' => 401,
-				'AustBrokers' => 412,
-				'AllSaints'=>416,
+				'Freightliner'=>420,
+				'Kinetic_Activation'=>1062,
+				'Infiniti_GP'=>402,
+				'Infiniti_MotorShow'=>399
 				);
 			$args = array( 'posts_per_page' => 4, 'post_type' =>'the_work', 'include' => $include_ids);
 			$myposts = get_posts( $args );
@@ -131,10 +129,10 @@ Template Name: What We Do
 			global $post;
 			//Branding
 			$include_ids = array(
+				'pickawall'=>425,
 				'magnifymedia'=>426,
 				'CheekyChinos' => 394,
-				'SwissWoodcraft' => 945,
-				'SelectAV'=>1022,
+				'feelinghealthy'=>1011,
 				);
 			$args = array( 'posts_per_page' => 4, 'post_type' =>'the_work', 'include' => $include_ids);
 			$myposts = get_posts( $args );
@@ -142,9 +140,7 @@ Template Name: What We Do
 			foreach( $myposts as $post ) :	setup_postdata($post); ?>			 
 
 			<li>
-				
-				<?php echo show_all_thumbs($post->ID); ?>
-				
+				<?php echo show_all_thumbs($post->ID); ?>		
 			</li>
 			
 		<?php endforeach; ?>
@@ -164,12 +160,13 @@ Template Name: What We Do
 		
 		<?php
 			global $post;
-			//Activation
+			
+			//Implementation
 			$include_ids = array(
-				'Drapac'=>1118,
-				'Kinetic_Activation' => 1062,
-				'Infiniti_GP' => 402,
-				'Freightliner'=>420
+				'ANZ_Implementation'=>989,
+				'Telstra'=>1054,
+				'AllSaints'=>416,
+				'Medibank'=>1037
 				);
 			$args = array( 'posts_per_page' => 4, 'post_type' =>'the_work', 'include' => $include_ids);
 			$myposts = get_posts( $args );	
@@ -198,9 +195,9 @@ Template Name: What We Do
 			//Digital 
 			$include_ids = array(
 				'pickawall'=>425,
-				'medibankpaperjam' => 1121,
-				'mtbow' => 945,
-				'feelinghealthy'=>1011,
+				'medibankpaperjam'=>1121,
+				'Infinit_DriveDay'=>401,
+				'ANZ_BusinessPlanCD'=>407
 				);
 			$args = array( 'posts_per_page' => 1, 'post_type' =>'the_work', 'include' => $include_ids);
 			$myposts = get_posts( $args );
@@ -208,20 +205,12 @@ Template Name: What We Do
 			foreach( $myposts as $post ) :	setup_postdata($post); ?>			 
 
 			<li>
-				 
-
 				<?php echo show_all_thumbs($post->ID); ?>
-				
-				</a>
 			</li>
 			
 		<?php endforeach; ?>
-				<div class="client-name">
-					
-				</div>
-				<div class="client-title">
-					
-				</div>
+				<div class="client-name"></div>
+				<div class="client-title"></div>
 			
 		</ul>	
 		</div>
@@ -252,26 +241,17 @@ Template Name: What We Do
 			foreach( $myposts as $post ) :	setup_postdata($post); ?>			 
 
 			<li>
-				 
-
-				 <?php echo show_all_thumbs($post->ID); ?>		
-
-				
-				
+				 <?php echo show_all_thumbs($post->ID); ?>
 			</li>
 			
 		<?php 
 		
 		endforeach; ?>
-		<div class="client-name"></div>
+				<div class="client-name"></div>
 				<div class="client-title"></div>
 			
 		</ul>	
 		</div>
-
-	
-	
-	
 	</div>
  
 </div>
@@ -281,10 +261,8 @@ Template Name: What We Do
 /* SCROLLS IF THERE IS AN ANCHOR IN THE URL */
 
 $(document).ready(function(){
-
+	// $(".client-name").text("Rollover thumbs");
 	var theURL = document.URL.substr(document.URL.indexOf('#'));
-	console.log(theURL);
-	//$("#process-content, #process-chart").slideUp(0);
 
 	if (theURL != '/'){
 		$('html,body').animate({scrollTop: ($(theURL).offset().top-180)+'px'}, 	'slow');
@@ -332,20 +310,6 @@ $(document).ready(function(){
 		$(this).parent().parent().children(".client-name, .client-title").text("");
 		
 	})
-
-	// get related thumbs
-
-	//get data text for each
-	//add to div for each
-	// fade out old 
-	//fadeIn effect on ROLLOVER
-	// delay()
-	//show tex fadein text
-	//hover out fade old out
-
-
-
-	
 	
 	
 });
