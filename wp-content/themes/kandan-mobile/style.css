@@ -34,7 +34,7 @@ Version: 1.0
 
 /* CSS BEGIN */
 
-/* @media screen and (max-device-width: 480px) and (orientation: portrait){ */
+ /*@media screen and (max-device-width: 480px) and (orientation: portrait){ */
 
 
 #portrait_mode{
@@ -92,11 +92,48 @@ body{
 }
 
 #logo{
-	clear: both;
+	max-width: 120px;
 	float: right;
 	margin-top: 5%;
 	margin-right: 5%;
 	margin-bottom: 4%;
+}
+
+/* SOCIAL MEDIA ICONS */
+#social-media-icons{
+	float: left;
+	width: 145px;
+	height: 20px;
+	margin-top: 15px;
+	margin-left: 0px;
+}
+
+#social-media-icons a{
+	display: block;
+	float: left;
+	width: 21px;
+	height: 21px;
+	margin-right: 10px;
+	background-image: url('images/social-media-icons.gif');
+	background-repeat: no-repeat;
+	opacity: 0.8;
+}
+
+#social-media-icons a.twitter{
+	width: 26px;
+	background-position: -1px -5px;
+}
+
+#social-media-icons a.google, #social-media-icons a.instagram{
+	background-position: -35px -5px;
+}
+
+#social-media-icons a.linkedin{
+	background-position: -66px -5px;
+}
+
+#social-media-icons a.facebook{
+	background-position: -96px -5px;
 }
 
 
@@ -134,7 +171,7 @@ body{
 	
 }
 
-#primary_nav li a:hover{
+#primary_nav li a:hover, #primary_nav li a.selected{
 	color: #0077ac;
 }
 
@@ -176,6 +213,8 @@ body{
 #home-slider .bx-wrapper img {
 	max-width: 100%;
 	display: block;
+	width: auto;
+	min-height: 200px;
 }
 
 #home-slider .home-slider-content{

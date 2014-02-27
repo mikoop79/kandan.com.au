@@ -33,35 +33,37 @@ function makemenu(){
 	/* ADDS CLASSES TO EACH li */
 
 	$("#primary_nav ul li a").not('#primary_nav ul li .page-accordion a').not('#primary_nav ul li .page-accordion a .services-icons div').each(function(i) { 	
-     		$(this).addClass("scroll"+(i+1));
+     		$(this).addClass(""+(i+1));
 		/* $(this).removeAttr("href"); */
     	});
 	
     	$("#primary_nav ul li a").on('click', function(){
 
-		var currentDiv = $(this).attr('class');
-		var gotoDiv = '.' + currentDiv;
-	
-		/* HIDES EITHER THIS OPEN PANEL OR CLOSES ANOTHER ONE AND OPENS THIS ONE (phew!) */
-		if ( $(this).siblings('.page-accordion').is(':visible') ){
-			
-			/* HIDES THIS */
-			$(this).siblings('.page-accordion').slideUp();	
-			$('html,body').animate({scrollTop: $('#primary_nav ul li a:first').offset().top}, 200);
-			/* $(this).click(function(){return false}); */
-		} else {		
-			
-			scrollToElement(gotoDiv);
-			setTimeout(function (){
+			var currentDiv = $(this).attr('class');
+			var gotoDiv = '.' + currentDiv; 
 
-            			/* HIDES THAT 
-				$('#primary_nav ul li .page-accordion').slideUp(); */
-		
-				/* AND SHOWS THE NEW ONE */
-				$(gotoDiv).siblings('.page-accordion').slideDown();	
+			$(".page-accordion").slideUp();
+			$("#primary_nav ul li a").removeClass("selected");
+				/* HIDES EITHER THIS OPEN PANEL OR CLOSES ANOTHER ONE AND OPENS THIS ONE (phew!) */
+				if ( $(this).siblings('.page-accordion').is(':visible') ){
+					$(this).removeClass("selected");
+					/* HIDES THIS */	
+					$(this).siblings('.page-accordion').slideUp();
+					
+					
+				} else {		
+					//$(this).addClass("selected");
+					scrollToElement(gotoDiv);
+					//$('html,body').animate({scrollTo: topPosition}, 200);
+					setTimeout(function (){
+		            	/* HIDES THAT 
+						$('#primary_nav ul li .page-accordion').slideUp(); */
+				
+						/* AND SHOWS THE NEW ONE */
+						$(gotoDiv).siblings('.page-accordion').slideDown();	
 
-         		}, 100); 
-		}	
+		         		}, 100); 
+				}	
 
 		/* REMOVES HYPERLINK  
 		return false;    */
