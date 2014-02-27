@@ -428,6 +428,7 @@ function the_work_metabox_id() {
 	// GET DATA IF ALREADY ENTERED
 	$h1 = get_post_meta($post->ID, '_h1', true);
 	$h2 = get_post_meta($post->ID, '_h2', true);
+	$web_url = get_post_meta($post->ID, '_web_url', true);
 	
 	
 	// OUT INPUTS & LABELS	
@@ -438,6 +439,9 @@ function the_work_metabox_id() {
 	echo '<label>Insert Project subtitle (H2)</label>';
 	echo '<input type="textarea" name="_h2" value="' . $h2  . '" class="widefat" />';
 	echo '<em class="howto" style="margin-bottom: 25px"> This will also be the H2 for SEO!</em>';
+	echo '<label>Insert Web URL (not including http://)</label>';
+	echo '<input type="textarea" name="_web_url" value="' . $web_url  . '" class="widefat" />';
+	echo '<em class="howto" style="margin-bottom: 25px">Please add url if it is a website</em>';
 	echo '</div>';
 }
 
@@ -452,6 +456,7 @@ function save_add_the_work_metaboxes($post_id, $post) {
 	// THE INPUTS	
 	$events_meta['_h1'] = $_POST['_h1'];
 	$events_meta['_h2'] = $_POST['_h2'];
+	$events_meta['_web_url'] = $_POST['_web_url'];
 	
 	// GRUNT WORK - NO NEED TO MODIFY!
 	
@@ -858,20 +863,20 @@ function the_clients($separator, $catID, $number) {
 
 	    		if ($category->count < 2){
 
-	    			global $post;	
-			
+	    	global $post;
+
 			$args = array('posts_per_page' => 1, 'post_type' =>'the_work' , 'orderby' => 'ASC', 'category' => $category->cat_ID);
+			
 			$myposts = get_posts( $args );
 		
 			foreach( $myposts as $post ) :	setup_postdata($post); 
-					$thelist .= "<li class=" . $category->slug . "><a href='".get_permalink()."'> " .$category->name. "</a></li>";
-	    			
+					$thelist .= "<li class=" . $category->slug . "><a href='".get_permalink()."'> " .$category->name. "</a></li>";	
 	    	endforeach;
 
 	    		} else {
 	    			$thelist .= "<li class=" . $category->slug . "><a href='/category/clients/".$category->slug."' >" . $category->name. "</a></li>";
 	    		}
-	        	
+
 	    	$limit++;
 	    	}
     	}
