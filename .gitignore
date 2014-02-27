@@ -1,1 +1,3 @@
 /wp-content/uploads/
+logs/access_log
+logs/error_log
