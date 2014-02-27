@@ -452,7 +452,6 @@ function save_add_the_work_metaboxes($post_id, $post) {
 	// THE INPUTS	
 	$events_meta['_h1'] = $_POST['_h1'];
 	$events_meta['_h2'] = $_POST['_h2'];
-
 	
 	// GRUNT WORK - NO NEED TO MODIFY!
 	
@@ -468,6 +467,7 @@ function save_add_the_work_metaboxes($post_id, $post) {
 	}
 }
 add_action('save_post', 'save_add_the_work_metaboxes', 1, 2); // save the custom fields
+
 //
 //
 //
@@ -709,9 +709,10 @@ add_action( 'init', 'my_custom_post_the_client' );
 // ADD IT!
 add_action( 'admin_init', 'add_the_client_metaboxes' );
 
-function add_the_client_metaboxes() {
-	add_meta_box('the_client_metabox', 'Logo Details', 'the_client_metabox_id', 'the_client', 'normal', 'high');
-}
+	function add_the_client_metaboxes() {
+		add_meta_box('the_client_metabox', 'Logo Details', 'the_client_metabox_id', 'the_client', 'normal', 'high');
+	}
+
 // ADDS CONTENT!
 function the_client_metabox_id() { 
 	global $post;
@@ -762,6 +763,7 @@ function save_add_the_client_metaboxes($post_id, $post) {
 	}
 }
 add_action('save_post', 'save_add_the_client_metaboxes', 1, 2); // save the custom fields
+
 //
 //
 //
@@ -789,7 +791,6 @@ function show_all_thumbs($post_id) {
 //
 //
 //
-//
 // ADDS SLUG TO wp_list_categories() 
 add_filter('wp_list_categories', 'add_slug_css_list_categories');
 function add_slug_css_list_categories($list) {	
@@ -801,8 +802,7 @@ $cats = get_categories();
 		$list = str_replace( $find, $replace, $list );
 		$find = '' . $cat->term_id . ' ';
 		$replace = '' . $cat->slug . ' ';
-		$list = str_replace($find, $replace, $list );
-		
+		$list = str_replace($find, $replace, $list );	
 	}
 
 return $list;
@@ -812,13 +812,12 @@ function the_category_unlinked($separator = '') {
     $categories = (array) get_categories();
     
     $thelist = '';
-    foreach($categories as $category) {    // concate
+    foreach($categories as $category) { 
     	if (cat_is_ancestor_of(2, $category)) {
         	$thelist .= "<li class=" . $category->slug . "><a href='#".$category->slug."' >" . $category->name. "</a></li>";
     	}
     }
     echo $thelist;
-    //var_dump($thelist);
 }
 /* this rewrites the link generator for services in the footer and loads the correct service */
 function make_custom_link_for_cat($separator, $catID, $number) {
@@ -840,7 +839,6 @@ function make_custom_link_for_cat($separator, $catID, $number) {
     echo $thelist;
 }
 /*
-
 	Get the clients 
 	this returns a list of links with the clients name
 	with a link to client page
