@@ -114,7 +114,7 @@ body{
 #footer-black-logo{
 	display: none;
 }
-
+/* SOCIAL MEDIA ICONS */
 #social-media-icons{
 	float: left;
 	width: 145px;
@@ -1195,6 +1195,8 @@ body{
 	background-color: #fff;
 }
 
+
+
 #the_work_page .the-line {
     border-bottom: 1px solid #c2c2c2;
     clear: both;
@@ -2018,10 +2020,11 @@ h6{
 
 #footer #footer_address {
 	padding-bottom:15px;
+	min-height: 215px;
 }
 
 #footer #footer_address #social-media-icons {
-	margin-top:0;
+	margin-top:10px;
 }
 #footer #footer_address h5{
 	
@@ -2145,6 +2148,13 @@ h6{
 	clear: both;
 
 }
+p.web_url {line-height: 25px;}
+p.web_url a {
+
+	font-size: 12px;
+	line-height: 16px;
+
+}
 
 /* END OF COOPS ADDED */
 
@@ -2158,5 +2168,3 @@ iframe,
 	background-color: white!important;
 	border: 0!important
 }
-
-/* GOOGLE CHROME CSS HACKS */
