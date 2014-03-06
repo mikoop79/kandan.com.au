@@ -88,6 +88,13 @@ if (class_exists('MultiPostThumbnails')) {
 	);
 	new MultiPostThumbnails(
 		array(
+			'label' => 'Mobile Home Slider',
+			'id' => 'the_slider2',
+			'post_type' => 'home_slides'
+		)
+	);
+	new MultiPostThumbnails(
+		array(
 			'label' => 'Services Thumbnail',
 			'id' => 'the_work3',
 			'post_type' => 'the_work'
@@ -439,9 +446,9 @@ function the_work_metabox_id() {
 	echo '<label>Insert Project subtitle (H2)</label>';
 	echo '<input type="textarea" name="_h2" value="' . $h2  . '" class="widefat" />';
 	echo '<em class="howto" style="margin-bottom: 25px"> This will also be the H2 for SEO!</em>';
-	echo '<label>Insert Web URL (not including http://)</label>';
+	echo '<label>Insert Web URL (IMPORTANT not including http://)</label>';
 	echo '<input type="textarea" name="_web_url" value="' . $web_url  . '" class="widefat" />';
-	echo '<em class="howto" style="margin-bottom: 25px">Please add url if it is a website</em>';
+	echo '<em class="howto" style="margin-bottom: 25px">Please add url if it has a website</em>';
 	echo '</div>';
 }
 

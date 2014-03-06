@@ -6,9 +6,27 @@ $(document).ready(function(){
 	makemenu();
 	removeWHAttr();
 	backToTop();
-	menuArrowSwitch();
+	//menuArrowSwitch();
 	makeServicesmenu();
 	$('body').scrollTop(0);
+	/* IFRAME VIMEO BOX */
+
+	 // Set all iframes to width of 250
+ $("iframe").each(
+     function(index, elem) {
+         elem.setAttribute("width","290");
+         //elem.setAttribute("height","180");
+     }
+ );
+
+ // removes all the stupid tags inserted by WP
+ $('p').each(function(){
+    var value = $.trim($(this).html());
+    if(value == '&nbsp;'){
+        $(this).remove();
+    }
+});
+
 });
 
 /* END DOCUMENT READY */
@@ -28,6 +46,9 @@ function scrollToElement(selector, time, verticalOffset) {
     }, time);
 }
 
+
+
+
 function makemenu(){
 
 	/* ADDS CLASSES TO EACH li */
@@ -38,45 +59,53 @@ function makemenu(){
     	});
 	
     	$("#primary_nav ul li a").on('click', function(){
-
+    		
 			var currentDiv = $(this).attr('class');
-			var gotoDiv = '.' + currentDiv; 
+			var gotoDiv = '.' + currentDiv;
 
 			$(".page-accordion").slideUp();
-			$("#primary_nav ul li a").removeClass("selected");
-				/* HIDES EITHER THIS OPEN PANEL OR CLOSES ANOTHER ONE AND OPENS THIS ONE (phew!) */
-				if ( $(this).siblings('.page-accordion').is(':visible') ){
-					$(this).removeClass("selected");
-					/* HIDES THIS */	
-					$(this).siblings('.page-accordion').slideUp();
-					
-					
-				} else {		
-					//$(this).addClass("selected");
-					scrollToElement(gotoDiv);
-					//$('html,body').animate({scrollTo: topPosition}, 200);
-					setTimeout(function (){
-		            	/* HIDES THAT 
-						$('#primary_nav ul li .page-accordion').slideUp(); */
-				
-						/* AND SHOWS THE NEW ONE */
-						$(gotoDiv).siblings('.page-accordion').slideDown();	
 
-		         		}, 100); 
-				}	
+			$("#primary_nav ul li a").parent().removeClass("selected");
+
+			/* HIDES EITHER THIS OPEN PANEL OR CLOSES ANOTHER ONE AND OPENS THIS ONE (phew!) */
+			if ( $(this).siblings('.page-accordion').is(':visible') ){
+				
+				/* HIDES THIS */	
+				$(this).siblings('.page-accordion').slideUp();
+				
+				$(this).removeClass("selected");
+			} else {		
+				
+				scrollToElement(gotoDiv);
+				//$('html,body').animate({scrollTo: topPosition}, 200);
+				setTimeout(function (){
+	            	/* HIDES THAT 
+					$('#primary_nav ul li .page-accordion').slideUp(); */
+					
+					/* AND SHOWS THE NEW ONE */
+					$(gotoDiv).siblings('.page-accordion').slideDown();	
+
+	         		}, 100); 
+
+				$(this).parent().addClass("selected");
+			}	
 
 		/* REMOVES HYPERLINK  
 		return false;    */
+
+		
 	});  	
 }
 
 function makeServicesmenu(){
 
-	$('.services-icons div').toggle(
+	$('.services-icons > div').toggle(
 	function(){
 		$(this).children('.services-page-accordion').slideDown();
+		$(this).delay('1500').addClass('selected');
 	}, function(){
 		$(this).children('.services-page-accordion').slideUp();
+		$(this).removeClass('selected');
 	});
 }
 
@@ -130,6 +159,11 @@ function removeWHAttr(){
   	$('.bxslider').bxSlider();
 }
 
+
+
+
+/* test */
+
 /* SLIDESHOW SCRIPT */
 
 (function($){
@@ -163,10 +197,10 @@ function removeWHAttr(){
 		swipeThreshold: 50,
 		oneToOneTouch: true,
 		preventDefaultSwipeX: true,
-		preventDefaultSwipeY: false,
+		preventDefaultSwipeY: true,
 
 		// PAGER
-		pager: false,
+		pager: true,
 		pagerType: 'full',
 		pagerShortSeparator: ' / ',
 		pagerSelector: null,
@@ -174,14 +208,14 @@ function removeWHAttr(){
 		pagerCustom: null,
 
 		// CONTROLS
-		controls: false,
-		nextText: 'Next',
-		prevText: 'Prev',
+		controls: true,
+		nextText: '>',
+		prevText: '<',
 		nextSelector: null,
 		prevSelector: null,
-		autoControls: false,
-		startText: 'Start',
-		stopText: 'Stop',
+		autoControls: true,
+		startText: '',
+		stopText: '',
 		autoControlsCombine: false,
 		autoControlsSelector: null,
 

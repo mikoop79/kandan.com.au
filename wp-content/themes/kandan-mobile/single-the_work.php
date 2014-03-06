@@ -13,38 +13,52 @@
 <div id="the_work_page">
 
 	<div id="content"> 
-		
-		
-				
-		
+
 			<?php the_post(); ?> 			
 				<h2><?php echo get_post_meta($post->ID, '_h1', true) ?></h2>			
 				<h4><?php echo get_post_meta($post->ID, '_h2', true) ?></h4>
 
-			<div class="the-line"></div>
-
 			<div class="service-title">
-
+				
 			<!-- GETS CATEGORY (retail, finance etc) -->		
 			<h5>Category:</h5>
 			<span>
 			<?php
+				$i = 0;
+				$comma = "";
 				foreach((get_the_category()) as $childcat) {
-				if (cat_is_ancestor_of(6, $childcat)) {
-					echo  $childcat->cat_name;
 					
-				}}
+					
+				if (cat_is_ancestor_of(6, $childcat)) {
+
+					if ($i > 0){
+						$comma = ", ";
+					}
+					echo  $comma . $childcat->cat_name;
+					$i++;
+				}
+
+					
+			}
 			?>
 			</span>
-
+			<br>
 			<!-- GETS SERVICE (brand, digital etc) -->
 			<h5>Service:</h5>
 			<span>
 			<?php
+				$i = 0;
+				$seperator = "";
 				foreach((get_the_category()) as $childcat) {
 				if (cat_is_ancestor_of(2, $childcat)) {
-					echo  $childcat->cat_name;
-					echo  '&nbsp;';
+					// check if the service is a 'main' service
+							if (is_main_service($childcat->term_id)){
+								if ($i > 0){ 
+									$seperator = ", ";
+								} 
+								echo $seperator . $childcat->cat_name;
+								$i++;
+							}
 				}}
 			?>
 			</span>

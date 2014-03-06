@@ -25,11 +25,12 @@ Template Name: Contact
 			Victoria Australia 3207</p>
 
 			<p>Phone: +61 3 9676 7100</p>
+			<br>
 		<div id="social-media-icons">
-			<a href="https://twitter.com/kandanmedia" class="twitter"></a>
-			<a href="http://instagram.com/kandanmedia#" class="instagram"></a>
-			<a href="http://au.linkedin.com/company/kandan?trk=ppro_cprof" class="linkedin"></a>
-			<a href="https://www.facebook.com/kandanmedia" class="facebook"></a>
+			<a href="https://twitter.com/kandanmedia" target="_blank" class="twitter"></a>
+			<a href="http://instagram.com/kandanmedia#" target="_blank" class="instagram"></a>
+			<a href="http://au.linkedin.com/company/kandan?trk=ppro_cprof" target="_blank" class="linkedin"></a>
+			<a href="https://www.facebook.com/kandanmedia" target="_blank" class="facebook"></a>
 		</div> 		
 </div>
 

@@ -19,7 +19,7 @@
 				<h4><?php echo get_post_meta($post->ID, '_h2', true) ?></h4>
 				<!--  adds the url to the site if there is one. -->
 				<?php if (get_post_meta($post->ID, '_web_url', true)) : ?>
-					<p class="web_url"><a  href="http://<?php echo get_post_meta($post->ID, '_web_url', true) ?>" target="_blank">Go to View Website</a></p>
+					<p class="web_url"><a  href="http://<?php echo get_post_meta($post->ID, '_web_url', true) ?>" target="_blank">View Website</a></p>
 				<?php endif; ?>
 				
 

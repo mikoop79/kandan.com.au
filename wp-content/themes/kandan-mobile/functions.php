@@ -112,6 +112,13 @@ if (class_exists('MultiPostThumbnails')) {
 	);
 	new MultiPostThumbnails(
 		array(
+			'label' => 'Mobile Home Slider',
+			'id' => 'the_slider2',
+			'post_type' => 'home_slides'
+		)
+	);
+	new MultiPostThumbnails(
+		array(
 			'label' => 'Their Thumbnail',
 			'id' => 'the_people1',
 			'post_type' => 'the_people'
@@ -824,6 +831,25 @@ $cats = get_categories();
 	}
 
 return $list;
+}
+
+/*
+	Function to see if the service is one of the main 6 service Kandan Provides
+*/
+function is_main_service($value){
+	$main_service_ids = $arrayName = array(
+		'activation' => 9,
+		'idea_generation' => 13,
+		'brading' => 7,
+		'social_media' => 11,
+		'digital' => 12,
+		'implementation' => 52, );
+
+	if (in_array($value, $main_service_ids) ){
+		return true;
+	} else {
+		return false;
+	}
 }
 //
 //

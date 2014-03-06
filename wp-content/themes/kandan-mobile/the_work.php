@@ -24,12 +24,12 @@ Template Name: The Work
 		foreach( $myposts as $post ) :	setup_postdata($post); ?>
 		<li class="<?php foreach((get_the_category()) as $childcat) { if (cat_is_ancestor_of(2, $childcat)) {echo $childcat->slug;echo" ";  } } ?>">
 			<a href="<?php the_permalink() ?>">
-				<h2><?php echo get_post_meta($post->ID, '_h1', true) ?></h2>
-				<h3><?php echo get_post_meta($post->ID, '_h2', true) ?></h3>	
-	
 				<?php if (class_exists('MultiPostThumbnails')) : MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'the_work2'); endif; ?>
 				
-				<?php the_excerpt(); ?>	
+				<h2><?php echo get_post_meta($post->ID, '_h1', true) ?></h2>
+				<h3><?php echo get_post_meta($post->ID, '_h2', true) ?></h3>
+
+				<?php //the_excerpt(); ?>	
 							
 			</a>
 

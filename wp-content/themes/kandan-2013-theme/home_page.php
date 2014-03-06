@@ -18,7 +18,7 @@ Template Name: Home
 			<li>
 				<div class="home-slider-content">	
 				<h2><?php echo get_post_meta($post->ID, '_h1', true) ?></h2>	
-				<h3><?php echo get_post_meta($post->ID, '_h2', true) ?></h3>	
+				
 				<a href="<?php echo get_post_meta($post->ID, '_link_the_url', true) ?>">
 					<?php echo get_post_meta($post->ID, '_link_text', true) ?>
 				</a>

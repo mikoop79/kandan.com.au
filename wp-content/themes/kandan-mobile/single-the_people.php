@@ -23,8 +23,6 @@
 	<h2><?php echo get_post_meta($post->ID, '_peoplename', true) ?></h2>
 			
 	<h3><?php echo get_post_meta($post->ID, '_peopletitle', true) ?></h3>
-	
-	<div class="the-line"></div>
 			
 	<?php the_content(); ?>   			
  

@@ -45,7 +45,7 @@ Template Name: Blog
 			echo the_time('M j');
 			echo '</span>';	
 			echo '<p>';
-			echo get_excerpt(245);			 	 	
+			echo get_excerpt();			 	 	
 			echo '</p>';
 			echo '<a href=" ',the_permalink(),' " class="link">Read more <span class="kandan-blue"> >> </span></a>';				
 			echo '</div>';		
