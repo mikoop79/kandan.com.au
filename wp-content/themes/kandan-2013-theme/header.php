@@ -9,6 +9,11 @@
 <meta name="description" content="<?php echo get_post_meta($post->ID, "_meta_des", true) ?>" />
 
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/custom-styles/navigation.css" />
+    <!--[if gt IE 9 ]><!-->
+        <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/custom-styles/navigation-ie.css" />
+    <!--[endif]-->
+
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/print.css" media="print" />
 
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>

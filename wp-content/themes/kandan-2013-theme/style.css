@@ -9,11 +9,9 @@ Version: 1.0
 /* CSS STYLES for http://www.kandan.com.au by - NK 121212 */
 
 @charset "utf-8";
-
-
 @import 'custom-styles/reset.min.css';
 @import 'custom-styles/animateStyles.css';
-@import 'custom-styles/navigation.css'; 
+
 
 /* FONTS */
 @font-face {

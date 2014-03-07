@@ -49,13 +49,13 @@
     -webkit-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
     -moz-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
     -o-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
-    -ms-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
-    transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+    /*-ms-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );*/
+    /*transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );*/
 
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
-    -ms-transform-style: preserve-3d;
-    transform-style: preserve-3d;
+    /*-ms-transform-style: preserve-3d;*/
+    /*transform-style: preserve-3d;*/
 }
 
 
@@ -86,6 +86,7 @@
     -moz-transform-style: preserve-3d;
     -ms-transform-style: preserve-3d;
     transform-style: preserve-3d;
+    background: #ffffff;
 }
 
 #primary_nav .menu li.current_page_item  {

@@ -1,0 +1,7 @@
+#primary_nav .menu li:hover a, #primary_nav .menu li.current_page_item a{
+    background: #fff;  
+    -ms-transform-style: none;
+    transform-style: none;
+    color: #248ABA;
+
+}
