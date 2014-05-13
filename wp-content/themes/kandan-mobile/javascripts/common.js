@@ -47,11 +47,11 @@ $(document).on("click", "a[href]:not([data-bypass])", function(evt) {
     if ($(this).parent().hasClass('wp-caption')) {
         return false;
     } else if ($(this).hasClass('bx-next') || $(this).hasClass('bx-prev') || $(this).hasClass('bx-pager-link') || $(this).hasClass('close-cross-btn')) {
-        console.log("dont show loader");
+        console.log("dont show loader" + $(this).text);
         return false;
     } else {
         //showloader();
-        console.log("showloader");
+        //console.log("showloader");
     }
 
 });
