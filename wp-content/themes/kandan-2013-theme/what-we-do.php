@@ -18,7 +18,7 @@ Template Name: What We Do
 	#process-chart{
 		background: url('<?php echo $url = wp_get_attachment_url( get_post_thumbnail_id($post_id) ); ?>');
 		height: 0;
-		width: 360px
+		width: 360px;
 	}
 
 </style>

@@ -4,24 +4,19 @@ Template Name: People & Culture
 */
 ?>
 
-<?php
-/*
-Template Name: The Work
-*/
-?>
 
 <!-- ONLY LOAD HEADER WHEN NO AJAX CALL OCCURS -->
 
-<?php if($_SERVER['HTTP_X_REQUESTED_WITH']==''){?>
+
 <?php get_header(); ?>
 
 <?php include (TEMPLATEPATH . '/ajax_menu.php'); ?> 
 
 <div class="ajax-content">
 
-<?php }?>
 
-<!-- PAGE CONTENT -->
+
+<!-- PAGE CONTENT2 -->
 <!-- so this part is only loaded by AJAX and the footer and header if a call is made directly to the page -->
 
 <div id="people-listing_page">

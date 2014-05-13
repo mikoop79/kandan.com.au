@@ -155,7 +155,7 @@ function admin_menu_separator() {
 	// ADDS CURRENTLY AFTER THE WORK (position 5)
 	add_admin_menu_separator(6); 
 	add_admin_menu_separator(10); 
-add_admin_menu_separator(12); 
+	add_admin_menu_separator(12); 
 }
 //
 //
@@ -908,6 +908,14 @@ function is_main_service($value){
 	} else {
 		return false;
 	}
+}
+
+
+add_action( 'wp_enqueue_scripts', 'home_custom_script' );
+
+function home_custom_script() {
+
+    wp_enqueue_script('home_custom','/wp-content/themes/kandan-2013-theme/custom_scripts/home_custom.js',array('jquery'));
 }
 
 ?>

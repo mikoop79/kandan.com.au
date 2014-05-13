@@ -42,31 +42,34 @@ add_theme_support( 'post-thumbnails' );
 // LOGIN LOGO
 //
 function my_custom_login_logo() {
-    echo '<style type="text/css">
-        h1 a { background-image:url('.get_bloginfo('template_directory').'/images/kandan_logo-login.gif) !important; 
-	height: 125px!important; background-size: 200px 131px!important;}
-	body, html { background-color: #0078ae!important; }
-	body.login {color: #0078ae!important;}
-	#backtoblog {display: none;}
-	.login #nav{ margin-left:-5px;}
-	.login #nav a{color: #21759B!important; }
-	.login #nav a:hover{color: #BE5B00!important;}
-	.login form .input, .login input[type="text"]{border: 1px solid #ccc;}
-	#nav{ text-shadow:none;}
-	form { -moz-border-radius: 0; -moz-box-shadow: none; border: 0!important;}
-	.login form {box-shadow: none!important; padding: 23px 8px 20px; margin-left:3px!important;}
-	#login{ background-color: #ffffff;
-    		border:0;
-		color: #777!important;
-    		margin: 7em auto;
-    		padding: 25px 30px 25px 25px;
-    		width: 320px;
-		border-radius: 10px;
-		-moz-box-shadow: 0 0 10px #555;
-		-webkit-box-shadow: 0 0 10px #555;
-		box-shadow: 0 0 10px #555;
-		}
-    </style>';
+    echo 	'<style type="text/css">
+	        h1 a { background-image:url('.get_bloginfo('template_directory').'/images/kandan_logo-login.gif) !important;
+			background-size: 57%!important;
+			width: 200px!important;
+			height: 131px!important;
+			background-position: center !important;
+			margin-top: -5px!important;}
+			body, html { background-color: #0078ae!important; }
+			body.login {color: #0078ae!important;}
+			#backtoblog {display: none;}
+			.login #nav{ margin-left:-5px;}
+			.login #nav a{color: #21759B!important; }
+			.login #nav a:hover{color: #BE5B00!important;}
+			.login form .input, .login input[type="text"]{border: 1px solid #ccc;}
+			#nav{ text-shadow:none;}
+			form { -moz-border-radius: 0; -moz-box-shadow: none; border: 0!important;}
+			.login form {box-shadow: none!important; padding: 23px 8px 20px; margin-left:3px!important;}
+			#login{ background-color: #ffffff;
+	    	border:0;
+			color: #777!important;
+			margin: 7em auto;
+			padding: 25px 30px 25px 25px;
+			width: 320px;
+			border-radius: 10px;
+			-moz-box-shadow: 0 0 10px #555;
+			-webkit-box-shadow: 0 0 10px #555;
+			box-shadow: 0 0 10px #555;}
+    		</style>';
 }
 add_action('login_head', 'my_custom_login_logo');
 //
@@ -173,7 +176,7 @@ function admin_menu_separator() {
 	// ADDS CURRENTLY AFTER THE WORK (position 5)
 	add_admin_menu_separator(6); 
 	add_admin_menu_separator(10); 
-add_admin_menu_separator(12); 
+    add_admin_menu_separator(12); 
 }
 //
 //

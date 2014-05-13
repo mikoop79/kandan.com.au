@@ -1,3 +1,8 @@
-/wp-content/uploads/
+/wp-content/uploads/*
 logs/access_log
 logs/error_log
+ftpsync.settings
+*.sublime-project
+*.sublime-workspace
+*.codekit
+wp-includes

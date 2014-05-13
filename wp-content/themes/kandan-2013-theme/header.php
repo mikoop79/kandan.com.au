@@ -1,30 +1,30 @@
-<?php ?>
 <!doctype html>
 <html>
 <head>
-<meta charset="UTF-8"> 
 <title><?php echo get_post_meta($post->ID, '_page_title', true) ?> | Creative Design Studio | South Melbourne</title>
-
+<meta charset='utf-8'>
 <meta name="keywords" content="<?php echo get_post_meta($post->ID, "_meta_tags", true) ?>" />
 <meta name="description" content="<?php echo get_post_meta($post->ID, "_meta_des", true) ?>" />
-
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/custom-styles/navigation.css" />
     <!--[if gt IE 9 ]><!-->
         <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/custom-styles/navigation-ie.css" />
     <!--[endif]-->
-
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/print.css" media="print" />
-
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
-
 <link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/favicon.ico" />
-
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.js"></script>
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script> -->
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/scripts.php"></script>
 
 <?php wp_head(); ?>
+
+ <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
  
 </head> 
 

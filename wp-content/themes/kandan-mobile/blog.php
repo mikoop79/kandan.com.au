@@ -4,9 +4,7 @@ Template Name: Blog
 */
 ?>
 
-<!-- ONLY LOAD HEADER WHEN NO AJAX CALL OCCURS -->
 
-<?php if($_SERVER['HTTP_X_REQUESTED_WITH']==''){?>
 <?php get_header(); ?>
 
 <?php include (TEMPLATEPATH . '/ajax_menu.php'); ?> 
@@ -14,8 +12,6 @@ Template Name: Blog
 <div class="ajax-content">
 
 <div id="post_page">
-
-<?php }?>
 
 <!-- PAGE CONTENT -->
 <!-- so this part is only loaded by AJAX and the footer and header if a call is made directly to the page -->
@@ -45,9 +41,9 @@ Template Name: Blog
 			echo the_time('M j');
 			echo '</span>';	
 			echo '<p>';
-			echo get_excerpt();			 	 	
+			the_content();			 	 	
 			echo '</p>';
-			echo '<a href=" ',the_permalink(),' " class="link">Read more <span class="kandan-blue"> >> </span></a>';				
+			echo '<a href=" ',the_permalink(),' " class="btn btn-default kandan ">Read more</a>';				
 			echo '</div>';		
 			echo '<div class="end_of_line"></div>';
 		endwhile;
@@ -66,14 +62,8 @@ Template Name: Blog
 
 	?>
 
-
 </div>
 		
-<!-- ONLY LOAD FOOTER WHEN NO AJAX CALL OCCURS -->
-
-<?php if($_SERVER['HTTP_X_REQUESTED_WITH']==''){?>
-
 </div>
 
 <?php get_footer(); ?>
-<?php }?>

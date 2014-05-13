@@ -1,13 +1,11 @@
-<!-- ONLY LOAD HEADER WHEN NO AJAX CALL OCCURS -->
 
-<?php if($_SERVER['HTTP_X_REQUESTED_WITH']==''){?>
 <?php get_header(); ?>
 
 <?php include (TEMPLATEPATH . '/ajax_menu.php'); ?> 
 
 <div class="ajax-content">
 
-<?php }?>
+
 
 <!-- PAGE CONTENT -->
 
@@ -33,11 +31,6 @@
 		
 </div> 
 
-<!-- ONLY LOAD FOOTER WHEN NO AJAX CALL OCCURS -->
-
-<?php if($_SERVER['HTTP_X_REQUESTED_WITH']==''){?>
-
 </div>
 
 <?php get_footer(); ?>
-<?php }?>

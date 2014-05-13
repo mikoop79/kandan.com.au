@@ -1,28 +1,37 @@
+
+<!-- FOOTER GOES HERE -->
 <div id="footer">
 
-	<div id="back-to-top">
-		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/back-to-top.png" alt="" />
+	<div id="social-media-icons" class="">
+			<a data-bypass="true" href="https://twitter.com/kandanmedia" class="twitter first" target="_blank"></a>
+			<a data-bypass="true" href="http://instagram.com/kandanmedia#" class="instagram" target="_blank"></a>
+			<a data-bypass="true" href="http://au.linkedin.com/company/kandan?trk=ppro_cprof" class="linkedin" target="_blank"></a>
+			<a data-bypass="true" href="https://www.facebook.com/kandanmedia" class="facebook last" target="_blank"></a>
+		</div>
+<?php
+	// pho script to do its magic for the appropriate  title on each page menu.
+	// show the connect with us button on every page exept the connect with us page.
+	
+	
+	$isItConnect= stripos($url, 'connect-with-us');
+
+	if ($isItConnect != '1'): ?>
+	<div class="row centered connect-btn">
+		<a href="/connect-with-us/"class="btn btn-default btn-lg kandan">Connect with Us</a>
 	</div>
+	
+<?php endif ?>
 
-	<div id="footer_address">
-		<p>Kandan Media Pty Ltd<br />
-		31 Ross St, South Melbourne<br />
-		Victoria Australia 3205<br /><br />
-		PO Box 27 Port Melbourne<br />
-		Victoria Australia 3207<br /><br />
-		Phone 03 9676 7100</p>	
-	</div>
+</div> <!-- END OF FOOTER -->
 
-</div>
 
-</div> <!-- WRAPPER -->
+</div> <!-- END OF WRAPPER -->
 
 <?php wp_footer(); ?>
 
-<!-- GOOGLE ANALYTICS -->
 
 <script type="text/javascript">
-
+	// <!-- GOOD OLD GOOGLE ANALYTICS -->
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-18439226-2']);
   _gaq.push(['_trackPageview']);
@@ -33,7 +42,11 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 
-</script>      
+	$(".wp-caption a").click(function(e) {
+    		e.preventDefault();
+   	});
+
+</script>
 
 </body>
 
