@@ -114,40 +114,43 @@ body{
 	display: none;
 }
 /* SOCIAL MEDIA ICONS */
-#social-media-icons{
+.social-media-icons{
 	float: left;
-	width: 145px;
-	height: 20px;
+	width: 155px;
+	
 	margin-top: -9px;
 	margin-left: 0px;
 }
 
-#social-media-icons a{
+.social-media-icons a{
 	display: block;
 	float: left;
-	width: 21px;
 	height: 21px;
-	margin-right: 10px;
-	background-image: url('images/social-media-icons.gif');
+	margin:0px;
+	opacity:0.8;
 	background-repeat: no-repeat;
-	opacity: 0.8;
+	background-position:0;
 }
 
-#social-media-icons a.twitter{
-	width: 26px;
-	background-position: -1px -5px;
+.social-media-icons a.twitter{
+	width:27px;
+	background-image: url('images/tweet.gif');
+	background-repeat: no-repeat;
 }
 
-#social-media-icons a.google, #social-media-icons a.instagram{
-	background-position: -35px -5px;
+.social-media-icons a.google, .social-media-icons a.instagram{
+	background-image: url('images/inst.gif');
+	width:29px;
 }
 
-#social-media-icons a.linkedin{
-	background-position: -66px -5px;
+.social-media-icons a.linkedin{
+	background-image: url('images/linkedin.gif');
+	width:74px;
 }
 
-#social-media-icons a.facebook{
-	background-position: -96px -5px;
+.social-media-icons a.facebook{
+	background-image: url('images/fb.gif');
+	width:25px;
 }
 
 #primary_nav{
@@ -2022,7 +2025,7 @@ h6{
 	min-height: 215px;
 }
 
-#footer #footer_address #social-media-icons {
+#footer #footer_address .social-media-icons {
 	margin-top:10px;
 }
 #footer #footer_address h5{

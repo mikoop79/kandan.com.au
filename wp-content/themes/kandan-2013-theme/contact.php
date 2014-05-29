@@ -26,12 +26,16 @@ Template Name: Contact
 
 			<p>Phone: +61 3 9676 7100</p>
 			<br>
-		<div id="social-media-icons">
-			<a href="https://twitter.com/kandanmedia" target="_blank" class="twitter"></a>
-			<a href="http://instagram.com/kandanmedia#" target="_blank" class="instagram"></a>
-			<a href="http://au.linkedin.com/company/kandan?trk=ppro_cprof" target="_blank" class="linkedin"></a>
-			<a href="https://www.facebook.com/kandanmedia" target="_blank" class="facebook"></a>
-		</div> 		
+		<?php
+		// add the social icons
+		if (function_exists(get_social_media_icons))
+
+			{
+				get_social_media_icons();
+			
+			}
+
+		?>	
 </div>
 
 		<div class="column">

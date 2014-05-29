@@ -64,12 +64,18 @@ Template Name: Home
 		
 		<a class="see-all-posts" href="/blog">See all <span class="kandan-blue"> >> </span></a>
 
-		<div id="social-media-icons">
-			<a href="https://twitter.com/kandanmedia" class="twitter"></a>
-			<a href="http://instagram.com/kandanmedia#" class="instagram"></a>
-			<a href="http://au.linkedin.com/company/kandan?trk=ppro_cprof" class="linkedin"></a>
-			<a href="https://www.facebook.com/kandanmedia" class="facebook"></a>
-		</div>
+		<?php
+		// add the social icons
+		if (function_exists(get_social_media_icons))
+
+			{
+				get_social_media_icons();
+			
+			} else {
+
+			}
+
+		?>	
 	</div>
 
 	<div class="content-section the-work">

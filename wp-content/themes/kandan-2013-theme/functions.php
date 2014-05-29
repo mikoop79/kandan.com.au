@@ -912,4 +912,21 @@ function is_main_service($value){
 	}
 }
 
+function get_social_media_icons(){
+
+	$social_icons = 	'<div class="social-media-icons">';
+	$social_icons .=    '<!-- Linked In -->';
+	$social_icons .=    '<a href="http://au.linkedin.com/company/kandan?trk=ppro_cprof" target="_blank" class="linkedin"></a>';
+	$social_icons .=    '<!-- twitter -->';
+	$social_icons .=    '<a href="https://twitter.com/kandanmedia" target="_blank" class="twitter"></a>';
+	$social_icons .=    '<!-- instagram -->';
+	$social_icons .=    '<a href="http://instagram.com/kandanmedia#" target="_blank" class="instagram"></a>';
+	$social_icons .=    '<!-- facebook -->';
+	$social_icons .=    '<a href="https://www.facebook.com/kandanmedia" target="_blank" class="facebook"></a>';
+	$social_icons .=    '</div> 	';
+
+	echo $social_icons;
+
+}
+
 ?>

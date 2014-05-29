@@ -62,12 +62,16 @@
 		PO Box 27 Port Melbourne<br />
 		Victoria Australia 3207<br /><br />
 		Phone 03 9676 7100</p>
-		<div id="social-media-icons" class="">
-			<a href="https://twitter.com/kandanmedia" class="twitter" target="_blank"></a>
-			<a href="http://instagram.com/kandanmedia#" class="instagram" target="_blank"></a>
-			<a href="http://au.linkedin.com/company/kandan?trk=ppro_cprof" class="linkedin" target="_blank"></a>
-			<a href="https://www.facebook.com/kandanmedia" class="facebook" target="_blank"></a>
-		</div> 	
+		<?php
+		// add the social icons
+		if (function_exists(get_social_media_icons))
+
+			{
+				get_social_media_icons();
+			
+			}
+
+		?>	
 	</div>
 
 </div>
