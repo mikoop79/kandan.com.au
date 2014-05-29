@@ -10,6 +10,7 @@ $(document).ready(function() {
     makemenu();
     removeWHAttr();
     backToTop();
+    // detectDevices();
     //menuArrowSwitch();
     makeServicesmenu();
     $('body').scrollTop(0);
@@ -32,6 +33,18 @@ $(document).ready(function() {
     });
 
 });
+
+
+/* DETECT DEVICES */
+
+function detectWidth() {
+    //var deviceAgent = navigator.userAgent.toLowerCase();
+    //var agentID = deviceAgent.match(/(iphone)/);
+    var theWidth = $(window).width();
+    if (!agentID) {
+
+    }
+}
 
 /* COOPS FUNCTIONS*/
 
@@ -470,6 +483,7 @@ function removeWHAttr() {
                 width: slider.settings.mode == 'horizontal' ? (slider.children.length * 100 + 215) + '%' : 'auto',
                 position: 'relative'
             });
+
             // if using CSS, add the easing property
             if (slider.usingCSS && slider.settings.easing) {
                 el.css('-' + slider.cssPrefix + '-transition-timing-function', slider.settings.easing);
@@ -500,7 +514,9 @@ function removeWHAttr() {
                 position: 'relative'
             });
             // apply the calculated width after the float is applied to prevent scrollbar interference
-            slider.children.css('width', getSlideWidth());
+            var newWidth = getSlideWidth() - 15;
+            slider.children.css('width', newWidth);
+            console.log(newWidth);
             // if slideMargin is supplied, add the css
             if (slider.settings.mode == 'horizontal' && slider.settings.slideMargin > 0) slider.children.css('marginRight', slider.settings.slideMargin);
             if (slider.settings.mode == 'vertical' && slider.settings.slideMargin > 0) slider.children.css('marginBottom', slider.settings.slideMargin);
@@ -1567,7 +1583,14 @@ function removeWHAttr() {
          */
         el.redrawSlider = function() {
             // resize all children in ratio to new screen size
-            slider.children.add(el.find('.bx-clone')).outerWidth(getSlideWidth());
+            var diff = 0;
+
+            if ($(slider.children).data('type') != 'home-slider') {
+                diff = 33;
+            }
+
+            slider.children.add(el.find('.bx-clone')).outerWidth(getSlideWidth() - diff);
+
             // adjust the height
             slider.viewport.css('height', getViewportHeight());
             // update the slide position

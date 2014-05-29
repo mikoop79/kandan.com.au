@@ -14,7 +14,7 @@ Template Name: Intro
 			$args = array( 'posts_per_page' => 6, 'post_type' =>'home_slides');
 			$myposts = get_posts( $args );
 			foreach( $myposts as $post ) :	setup_postdata($post); ?>
-			<li>
+			<li data-type="home-slider">
 				<div class="home-slider-content">	
 				<h2><?php echo get_post_meta($post->ID, '_h1', true) ?></h2>
 				
@@ -104,14 +104,10 @@ Template Name: Intro
 				<span class="<?php foreach((get_the_category()) as $childcat) { if (cat_is_ancestor_of(2, $childcat)) {echo $childcat->slug;echo" ";  } } ?>">				
 				<a href="<?php the_permalink() ?>">					
 					<?php if (class_exists('MultiPostThumbnails')) : MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'the_work2'); endif; ?>
-						
 				</a>
-				
-				
-
 				</span>
 			</li>
-		<?php endforeach; ?>	
+		<?php endforeach; ?>
 		</ul>		
 	</div>
 
@@ -128,7 +124,7 @@ Template Name: Intro
 				<a class="client-logos" href="<?php echo get_post_meta($post->ID, '_logo_link', true) ?>">
 									
 						<?php if (class_exists('MultiPostThumbnails')) : MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'the_client1'); endif; ?>
-					</a>
+				</a>
 			</li>
 		<?php endforeach; ?>	
 		</ul>		

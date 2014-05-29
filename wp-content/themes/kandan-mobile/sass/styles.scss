@@ -38,10 +38,6 @@ $mainTransistion:fadeIn 1s bounceInUp 1s;
   font-weight: normal;
 }
 
-// html{
-//   width: 320px!important;
-// }
-
 
 /* CSS BEGIN */
 ////////////////////////////////////////////////// ================================ START of media querie =========
@@ -55,7 +51,7 @@ $mainTransistion:fadeIn 1s bounceInUp 1s;
   float: left;
   margin-left: 15px;
   margin-top: 10px;
-  border-raduis:0px!important;
+  border-radius:0px!important;
   @include prefixer(border-raduis, 0px !important, webkit moz ms o spec);
 }
 
@@ -196,42 +192,45 @@ body {
 
 #social-media-icons {
   float: none;
-  width: 95%;
-  height: 20px;
+  width: 100%;
+  height: 42px;
   margin-top: 19px;
-  margin-left: 0px;
-  a {
+
+  .social-spacer{
+    width: 25%;
+    display: inline-table;
+    margin: 0 -2px;
+    padding: 0;
+    a {
     display: block;
-    float: left;
-    width: 21px;
-    height: 21px;
-    margin-right: 21% ;
-    margin-left: 0% ;
+    text-align: center;
+    margin: 0 auto;
+    width: 40px;
+    height: 40px;
+    
     background-image: url('images/social-media-icons.gif');
     background-repeat: no-repeat;
+    background-size:auto 41px;
     opacity: 0.8;
     &.twitter {
-      width: 26px;
       background-position: -1px -5px;
     }
     &.google, &.instagram {
-      background-position: -35px -5px;
+      background-position: -42px -5px;
     }
     &.linkedin {
-      background-position: -66px -5px;
+      background-position: -85px -5px;
     }
     &.facebook {
-      background-position: -96px -5px;
+      background-position: -126px -5px;
     }
     &.first{
-      margin-left: 15px !important;
-      float: left;
     }
     &.last{
-      margin-right: 0px !important;
-      float: right;
     }
   }
+  }
+  
 }
 
 #primary_nav {
@@ -310,16 +309,21 @@ body {
     margin: 0 auto;
     padding: 0;
     *zoom: 1;
-    height: 270px;
+    min-height:285px!important;
+    .bxslider{
+      li{
+        width: 100%;
+      }
+    }
     img {
       width: 100%;
       height: auto;
     }
   }
   > div > div.bx-controls {
-    width: 90%;
+    width:100%;
     position: absolute;
-    left:15px;
+    left:0px;
     bottom: 0px;
     height: 50px;
     margin: 0 auto;
@@ -368,9 +372,7 @@ body {
   width: 30px;
   height: 28px;
   text-indent: -9999px;
-  /*background-size: 90%;*/
   background: url('images/left-right-arrows_dark.png') -3px 0 no-repeat;
-  /*background-color: red;*/
 }
 
 .reversed {
@@ -381,13 +383,12 @@ body {
 
 .bx-prev, .reversed .bx-prev {
   float: left;
-  margin-left: 0;
+  margin-left: 15px;
 }
 
 .bx-next, .reversed .bx-next {
   float: right;
-  margin-right: 0;
-  /*background-color: red;*/
+  margin-right: 15px;
   background-position: -22px 0;
 }
 
@@ -477,36 +478,35 @@ body {
   
     .bx-wrapper {
       padding-top: 0;
-      height: 270px;
     }
 }
 
 .client-logos {
-    background-color: #E9E8E8;
-    width: 90%;
-    height: 220px;
-    margin: 0 15px;
+    
+    width: 100%;
+    height: auto;
+    margin: 0;
     display: block;
-
     img {
        margin-top: 25px;
-        width: 100%;
+        width: auto;
     }
 }
 
 #home-clients .bx-wrapper {
   padding-top: 0;
-  min-height: 250px;
-  height: 250px;
+  .bxslider{
+    li{
+        background-color: #E9E8E8;
+        margin:0 15px;
+    }
+  }
  
     img {
       position: relative;
       z-index: 1;
       top: -25px;
     }
-  
-  /*//height: 210px;*/
-  /*background-color: red;*/
 }
 
 #home-people {
@@ -515,7 +515,6 @@ body {
   min-height: 285px;
   }
   li{
-    width:290px !important;
     margin: 0 15px;
   }
 }
@@ -530,13 +529,9 @@ body {
 
 #the-work .bx-wrapper {
   min-height: 220px;
-  height: 260px;
 }
 
-#home-services .services-icons > li {
-  /*//height: 200px;*/
-  background-color: #FFF;
-}
+
 
 .home-slider, #footer {
 
@@ -573,12 +568,17 @@ body {
   p{
     text-align: left;
   }
-  .idea-generation, .implementation, .activation, .digital, .brand, .social-media {
+  li{
     background-color: #E9E8E8;
+    margin: 0 15px;
+
+  }
+  .idea-generation, .implementation, .activation, .digital, .brand, .social-media {
+    
     padding: 20% 15px;
-    width: 90%;
-    height: 220px;
-    margin: 0 auto;
+    height: auto;
+    margin: 0;
+    margin-right: 0;
     font-family: 'helv-bold';
     line-height: 25px;
   }
@@ -772,8 +772,8 @@ body {
     
     margin: 0 15px;
     img{
-     width: 290px;
-     margin-bottom: 15px;
+     width: 100%;
+     //margin-bottom: 15px;
     }
   }
 
@@ -1361,7 +1361,7 @@ h6 {
 
 
 
-@media (min-width: 400px) {
+@media (min-width: 400px) and  (orientation: landscape) {
   body{
     background-image:none;
   }

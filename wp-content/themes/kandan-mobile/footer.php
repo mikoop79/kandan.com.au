@@ -3,10 +3,18 @@
 <div id="footer">
 
 	<div id="social-media-icons" class="">
-			<a data-bypass="true" href="https://twitter.com/kandanmedia" class="twitter first" target="_blank"></a>
-			<a data-bypass="true" href="http://instagram.com/kandanmedia#" class="instagram" target="_blank"></a>
-			<a data-bypass="true" href="http://au.linkedin.com/company/kandan?trk=ppro_cprof" class="linkedin" target="_blank"></a>
-			<a data-bypass="true" href="https://www.facebook.com/kandanmedia" class="facebook last" target="_blank"></a>
+	<div class="social-spacer">
+		<a data-bypass="true" href="https://twitter.com/kandanmedia" class="twitter" target="_blank"></a>
+	</div>	
+	<div class="social-spacer">
+		<a data-bypass="true" href="http://instagram.com/kandanmedia#" class="instagram" target="_blank"></a>
+	</div>
+	<div class="social-spacer">
+		<a data-bypass="true" href="http://au.linkedin.com/company/kandan?trk=ppro_cprof" class="linkedin" target="_blank"></a>
+	</div>
+	<div class="social-spacer">
+		<a data-bypass="true" href="https://www.facebook.com/kandanmedia" class="facebook" target="_blank"></a>
+	</div>
 		</div>
 <?php
 	// pho script to do its magic for the appropriate  title on each page menu.
