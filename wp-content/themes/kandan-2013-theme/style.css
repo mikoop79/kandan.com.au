@@ -2045,7 +2045,7 @@ h6{
 /* Hides on proper desktop, pc, mac, tablet etc */
 
 #mobilesmart_switcher{
-	display: block;
+	display: none;
 }
 
 @media screen and (max-device-width: 480px) and (orientation: portrait){ 

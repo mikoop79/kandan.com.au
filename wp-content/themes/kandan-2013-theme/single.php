@@ -27,8 +27,8 @@
 			<h6>More Posts</h6>
 			<div id="post_pagination">
 				
-		<div class="prev"><?php previous_post_link('%link', 'Next post: "%title"', true ); ?></div>
-		<div class="more"><?php next_post_link('%link', 'Previous post: "%title"', true ); ?></div>
+		<div class="prev"><?php previous_post_link('%link', 'Previous post: "%title"', true ); ?></div>
+		<div class="more"><?php next_post_link('%link', 'Next post: "%title"', true ); ?></div>
 
 			</div>
 	

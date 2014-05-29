@@ -33,12 +33,12 @@ Template Name: Who We Are
 		
 		<?php
 			global $post;
-			$args = array( 'posts_per_page' => 3, 'post_type' =>'the_people' , 'levels' => 'sticky', 'orderby' => 'rand');
+			$args = array( 'posts_per_page' => 3, 'post_type' =>'the_people' , 'levels' => 'sticky', 'orderby' => 'ID', 'order' => 'ASC');
 			$myposts = get_posts( $args );
 			$i = 1;
 			foreach( $myposts as $post ) :	setup_postdata($post); ?>
 
-<li class="<?php if($i == 3) echo "last";  ?>" >
+			<li class="<?php if($i == 3) echo "last";  ?>" >
 				<a href="<?php the_permalink() ?>">
 					<div class="hover-arrows"></div>
 					<div class="hover-arrows-hover"></div>

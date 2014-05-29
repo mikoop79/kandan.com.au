@@ -1,10 +1,12 @@
 <!doctype html>
 <html>
 <head>
+<meta charset="UTF-8"> 
 <title><?php echo get_post_meta($post->ID, '_page_title', true) ?> | Creative Design Studio | South Melbourne</title>
 <meta charset='utf-8'>
 <meta name="keywords" content="<?php echo get_post_meta($post->ID, "_meta_tags", true) ?>" />
 <meta name="description" content="<?php echo get_post_meta($post->ID, "_meta_des", true) ?>" />
+
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/custom-styles/navigation.css" />
     <!--[if gt IE 9 ]><!-->

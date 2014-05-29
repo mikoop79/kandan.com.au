@@ -28,7 +28,7 @@ Template Name: What We Do
 	<div id="content">
 			
 			<div id="rollover-content">
-				<div id="process-content" class="">
+				<div id="process-content">
 				<h1 class="title">
 					<?php echo $title; ?>
 				</h1>
@@ -261,8 +261,10 @@ Template Name: What We Do
 /* SCROLLS IF THERE IS AN ANCHOR IN THE URL */
 
 $(document).ready(function(){
-	// $(".client-name").text("Rollover thumbs");
+
 	var theURL = document.URL.substr(document.URL.indexOf('#'));
+	//console.log(theURL);
+	//$("#process-content, #process-chart").slideUp(0);
 
 	if (theURL != '/'){
 		$('html,body').animate({scrollTop: ($(theURL).offset().top-180)+'px'}, 	'slow');

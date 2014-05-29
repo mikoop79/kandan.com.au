@@ -235,9 +235,21 @@
    transform: rotateX(0deg) scale(1);
  }
 
+@keyframes "kd_speech_two" {
+ 0% {
+   -o-transform: rotateX(0deg) scale(1);
+   transform: rotateX(0deg) scale(1);
+ }
+ 50% {
+   -o-transform: scale(1.5);
+   transform: scale(1.5);
+ }
+ 100% {
+   -o-transform: scale(1);
+   transform: scale(1);
+ }
+
 }
-
-
 
 @-moz-keyframes kd_speech_two {
  0% {
@@ -271,8 +283,8 @@
 
 }
 
-@-ms-keyframes kd_speech_two {
- 0% { -ms-transform: scale(1);
+@-ms-keyframes "kd_speech_two" {
+  -ms-transform: scale(1);
   transform: scale(1);
 }
  50% {
@@ -287,7 +299,7 @@
 }
 
  @-o-keyframes "kd_speech_two" {
-  0% {-o-transform: rotateX(0deg) scale(1);
+  -o-transform: rotateX(0deg) scale(1);
   transform: rotateX(0deg) scale(1);
 }
  50% {
@@ -299,26 +311,7 @@
    transform: scale(1);
  }
 
-}
-
-
-@keyframes kd_speech_two {
- 0% {
-   -o-transform: rotateX(0deg) scale(1);
-   transform: rotateX(0deg) scale(1);
- }
- 50% {
-   -o-transform: scale(1.5);
-   transform: scale(1.5);
- }
- 100% {
-   -o-transform: scale(1);
-   transform: scale(1);
- }
-
-}
-
-@keyframes kd_float {
+@keyframes "kd_float" {
  49% {
    top: 18px;
  }
@@ -339,7 +332,7 @@
 
 }
 
-@-ms-keyframes kd_float {
+@-ms-keyframes "kd_float" {
  49% {
    top: 18px;
  }
@@ -365,7 +358,6 @@
   left: 23px !important;
   -webkit-background-size: 89%;
   -moz-background-size: 89%;
-  -ms-background-size:89%;
   background-size: 89%;
 
   -webkit-transition: all .1s ease-in-out;
@@ -385,11 +377,11 @@
 
 .services-icons a.social-media:hover span {
   position: absolute;
-  -webkit-animation: kd_speech_two 1s ease-in-out infinite;
-  -moz-animation: kd_speech_two 1s ease-in-out infinite;
-  -ms-animation: kd_speech_two 1s ease-in-out infinite;
-  -o-animation: kd_speech_two 1s ease-in-out infinite;
-  animation: kd_speech_two 1s ease-in-out infinite;
+  -webkit-animation: kd_speech 1s ease-in-out infinite;
+  -moz-animation: kd_speech 1s ease-in-out infinite;
+  -ms-animation: kd_speech 1s ease-in-out infinite;
+  -o-animation: kd_speech 1s ease-in-out infinite;
+  animation: kd_speech 1s ease-in-out infinite;
 }
 
 /* BRAND STUFF */

@@ -4,7 +4,7 @@
 		<div class="arrow"></div>
 		<div class="invisible-button"></div>
 		
-		<script type="text/javascript">
+		<script>
 		/* SETS COOKIE FOR CLOSED CONTACTS AREA */
 		$(document).ready(function(){
 		var closeContacts = $.cookie("closedContactsCookie");
